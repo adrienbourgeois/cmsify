@@ -1,5 +1,7 @@
 # Cmsify
 
+This is a work in progress. Most of the functionalities haven't been implemented yet.
+
 ## Installion and mounting
 
 Mount the api endpoints in your routes.rb file (with whichever namespace):
