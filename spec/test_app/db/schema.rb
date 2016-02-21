@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20160221045222) do
 
   create_table "cmsify_texts", force: :cascade do |t|
-    t.text     "text"
+    t.text     "content"
     t.integer  "owner_id"
     t.string   "owner_type"
     t.string   "slug"

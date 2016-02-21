@@ -1,7 +1,7 @@
 class CreateCmsifyTexts < ActiveRecord::Migration
   def change
     create_table :cmsify_texts do |t|
-      t.text :text
+      t.text :content
       t.integer :owner_id
       t.string :owner_type
       t.string :slug
