@@ -10,11 +10,11 @@ angular.module('Cmsify').controller 'CmsifyTextEditCtrl', [
     $scope.model = { content: $scope.text, object_model: $scope.objectModel, field: $scope.field }
 
     $scope.updateText = ->
-      path = "<%= Cmsify::Engine.routes.url_helpers::api_v1_text_path("my_id") %>".replace("my_id", $scope.objectId)
+      path = "<%= Cmsify::Engine.routes.url_helpers::text_path("my_id") %>".replace("my_id", $scope.objectId)
       $http.put(path, $scope.model)
 ]
 
-angular.module('Cmsify').directive 'CmsifyTextEdit', ->
+angular.module('Cmsify').directive 'cmsifyTextEdit', ->
   return {
     restrict: "A"
     scope:

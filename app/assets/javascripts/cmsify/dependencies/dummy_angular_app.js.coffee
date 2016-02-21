@@ -2,7 +2,7 @@ angular.module('Cmsify',[])
 
 app = angular.module("CmsifyApp",
   [
-    'FfxTinyCms'
+    'Cmsify'
   ]
 )
 
