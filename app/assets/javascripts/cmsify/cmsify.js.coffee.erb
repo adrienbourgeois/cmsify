@@ -1,0 +1,30 @@
+angular.module('Cmsify', [
+  'xeditable'
+  'ngFileUpload'
+])
+
+angular.module('Cmsify').controller 'CmsifyTextEditCtrl', [
+  '$scope'
+  '$http'
+  ($scope, $http) ->
+    $scope.model = { content: $scope.text, object_model: $scope.objectModel, field: $scope.field }
+
+    $scope.updateText = ->
+      path = "<%= Cmsify::Engine.routes.url_helpers::api_v1_text_path("my_id") %>".replace("my_id", $scope.objectId)
+      $http.put(path, $scope.model)
+]
+
+angular.module('Cmsify').directive 'CmsifyTextEdit', ->
+  return {
+    restrict: "A"
+    scope:
+      text: '@'
+      objectModel: '@'
+      objectId: '@'
+      field: '@'
+    controller: 'CmsifyTextEditCtrl'
+    template: """
+      <a href="#" editable-textarea="model.content" onaftersave="updateText()">{{ model.content }}</a>
+    """
+  }
+  
